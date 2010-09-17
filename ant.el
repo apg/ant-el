@@ -52,11 +52,12 @@
           newtasks)))))
 
 (defun ant-get-task (directory)
-  (let ((task (completing-read (concat "Task (default): ") 
-                             (ant-tasks directory))))
-    (if (> (length task) 0)
-        task
-      "")))
+  (let ((crm-separator " "))
+    (let ((task (completing-read-multiple (concat "Task (default): ") 
+                                          (ant-tasks directory))))
+      (if (> (length task) 0)
+          task
+        ""))))
 
 (defun ant-find-root (indicator)
   (let ((cwd default-directory))

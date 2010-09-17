@@ -56,7 +56,7 @@
     (let ((task (completing-read-multiple (concat "Task (default): ") 
                                           (ant-tasks directory))))
       (if (> (length task) 0)
-          task
+          (mapconcat 'identity task " ")
         ""))))
 
 (defun ant-find-root (indicator)

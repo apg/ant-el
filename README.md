@@ -32,6 +32,8 @@ The basic operation is to invoke `M-x ant`, which will ask you for a task to per
         (interactive)
         (ant "compile_full"))
         
+`M-x ant-kill-cache` kills the internal cache used to speed up the auto-completion of ant tasks in the mini-buffer.
+        
 
 [0]: http://gnu.org/software/emacs
 [1]: http://ant.apache.org

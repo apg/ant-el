@@ -67,6 +67,10 @@
         (expand-file-name cwd)
       nil)))
 
+(defun ant-kill-cache ()
+  (interactive)
+  (setq *ant-tasks-cache* '()))
+
 (defun ant (&optional task)
   "Run ant `task` in project root directory."
   (interactive)

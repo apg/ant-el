@@ -78,7 +78,7 @@
     (if default-directory
         (let ((task (or task (ant-get-task default-directory))))
           (setq ant-last-task task)
-          (compile (concat "ant -emacs " task)))
+          (compile (concat ant-command " " task)))
       (message "Couldn't find an ant project."))))
 
 (defun ant-last ()

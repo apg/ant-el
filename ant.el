@@ -44,12 +44,13 @@
 ;; should cache tasks from the build file at some point
 (defun ant-tasks (directory)
   (let ((tasks (assoc-string directory *ant-tasks-cache*)))
-    (or tasks
-        (progn 
-          (let ((newtasks (or (ant-find-tasks directory) ant-tasks-default)))
-            (setq *ant-tasks-cache*
-                  (cons (cons directory newtasks) *ant-tasks-cache*))
-          newtasks)))))
+    (cdr 
+     (or tasks
+         (progn 
+           (let ((newtasks (or (ant-find-tasks directory) ant-tasks-default)))
+             (setq *ant-tasks-cache*
+                   (cons (cons directory newtasks) *ant-tasks-cache*))
+             newtasks))))))
 
 (defun ant-get-task (directory)
   (let ((task (completing-read-multiple (concat "Task (default): ") 

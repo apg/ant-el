@@ -6,9 +6,9 @@ This is a few helpers for using compilation mode in Emacs with ant.
 
 ### Customizations
 
-If you're ant is in a nonstandard location, `(setq ant-command "/path/to/ant -emacs")`
+If your ant is in a nonstandard location, `(setq ant-command "/path/to/ant -emacs")`
 
-If you're build doesn't use "build.xml", you'll need to end `ant-command` with `-buildfile` or `-file` and also do `(setq ant-build-file-name "somethingelse.xml")` so that the automated project root discovery works correctly.
+If your build doesn't use "build.xml", you'll need to end `ant-command` with `-buildfile` or `-file` and also do `(setq ant-build-file-name "somethingelse.xml")` so that the automated project root discovery works correctly.
 
 ### Installation
 

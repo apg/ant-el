@@ -100,3 +100,5 @@
   (ant "test"))
 
 (provide 'ant)
+
+;;; ant.el ends here

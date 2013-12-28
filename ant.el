@@ -68,10 +68,12 @@
         (expand-file-name cwd)
       nil)))
 
+;;;###autoload
 (defun ant-kill-cache ()
   (interactive)
   (setq *ant-tasks-cache* '()))
 
+;;;###autoload
 (defun ant (&optional task)
   "Run ant `task` in project root directory."
   (interactive)
@@ -82,19 +84,23 @@
           (compile (concat ant-command " " task)))
       (message "Couldn't find an ant project."))))
 
+;;;###autoload
 (defun ant-last ()
   "Run the last ant task in project"
   (interactive)
   (ant (or ant-last-task "")))
 
+;;;###autoload
 (defun ant-compile ()
   (interactive)
   (ant "compile"))
 
+;;;###autoload
 (defun ant-clean ()
   (interactive)
   (ant "clean"))
 
+;;;###autoload
 (defun ant-test ()
   (interactive)
   (ant "test"))

@@ -37,7 +37,7 @@
                                                  ant-build-file-name))))
     (message output)
     (if (> (length output) 0)
-        (mapcar '(lambda (x) (replace-regexp-in-string ".*<target.*name=\"\\([^\-][^\"]*\\).*" "\\1" x)) 
+        (mapcar (lambda (x) (replace-regexp-in-string ".*<target.*name=\"\\([^\-][^\"]*\\).*" "\\1" x)) 
                 (split-string output "[\n]"))
       nil)))
 
